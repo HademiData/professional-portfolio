@@ -346,8 +346,8 @@ replace `<repository-url>` with your **actual GitHub repository URL**.
 
 Also, don't add the screenshot yet if you haven't created it. Once you have the screenshot, we can add something like:
 
-![Portfolio running inside Docker](./screenshots/docker-container-running.png)
+## Docker Container Running
 
-and put the screenshot in a `screenshots/` folder.
+The portfolio application running successfully inside a Docker container:
 
-**Your Task 1 will then be nicely covered:** Git/GitHub ✅ → Dockerfile ✅ → Docker image ✅ → Docker container ✅ → Documentation ✅ → Screenshot ⏳ → Reflection ⏳.
+![Portfolio running inside Docker](https://github.com/HademiData/professional-portfolio/raw/main/screenshots/docker-container-running.png)
