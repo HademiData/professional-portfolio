@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI & MLOps Professional Portfolio - Bridging Machine Learning & Scalable Infrastructure">
+    <title>AI & MLOps Engineer | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans overflow-x-hidden">
+    <!-- ============================================
+         Navigation Header
+         ============================================ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-cyan-500/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Brand -->
+                <div class="flex-shrink-0 font-bold text-xl">
+                    <span class="text-white">Alex</span>
+                    <span class="text-cyan-400">.dev</span>
+                </div>
+                
+                <!-- Navigation Links (Desktop) -->
+                <div class="hidden md:flex gap-8">
+                    <a href="#about" class="nav-link hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#skills" class="nav-link hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menuToggle" class="md:hidden text-cyan-400 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-cyan-500/20">
+                <a href="#about" class="block py-2 text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="block py-2 text-gray-300 hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="block py-2 text-gray-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="block py-2 text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         Hero Section
+         ============================================ -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Animated Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-slate-950 to-emerald-900/10 pointer-events-none"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Left Content -->
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <p class="text-cyan-400 font-mono text-sm uppercase tracking-widest">
+                        <span class="inline-block animate-pulse">→</span> Welcome to my portfolio
+                    </p>
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                        <span class="text-white">Bridging</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+                            Machine Learning & Scale
+                        </span>
+                    </h1>
+                    <p class="text-xl text-gray-300 leading-relaxed max-w-lg">
+                        AI & MLOps Engineer crafting intelligent systems with scalable infrastructure. Passionate about LangChain, cloud architecture, and production-grade ML pipelines.
+                    </p>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#projects" class="cta-button cta-primary inline-flex items-center justify-center">
+                        <i class="fas fa-code mr-2"></i> View Projects
+                    </a>
+                    <a href="#contact" class="cta-button cta-secondary inline-flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2"></i> Get in Touch
+                    </a>
+                </div>
+                
+                <!-- Social Links Preview -->
+                <div class="flex gap-4 pt-4">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Content - Profile Image -->
+            <div class="flex justify-center md:justify-end">
+                <div class="hero-image-container relative">
+                    <!-- Animated Border Glow -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl opacity-20 blur-xl"></div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden border border-cyan-500/30 p-1">
+                        <img 
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202026-07-31%2012-27-48-pNJF5qSmfd0hMK7Qm6hnjLqnfizZOq.png" 
+                            alt="AI & MLOps Engineer Profile"
+                            class="w-80 h-80 object-cover rounded-lg"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-cyan-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- ============================================
+         About Me Section
+         ============================================ -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+                <p class="text-lg">
+                    I'm a passionate <span class="text-cyan-400 font-semibold">AI & MLOps Engineer</span> with a deep expertise in building end-to-end machine learning systems that scale. My journey spans from architecting intelligent applications with LangChain and RAG systems to designing robust cloud infrastructure that powers these systems reliably.
+                </p>
+                
+                <p class="text-lg">
+                    With a blend of <span class="text-emerald-400 font-semibold">software engineering</span> and <span class="text-emerald-400 font-semibold">DevOps mindset</span>, I bridge the gap between research and production. I'm fluent in Python for ML workflows, Go for high-performance services, and Terraform for infrastructure-as-code. My passion lies in making AI accessible, maintainable, and performant at scale.
+                </p>
+                
+                <p class="text-lg">
+                    Whether I'm optimizing embedding pipelines, deploying Dockerized ML services on AWS, or crafting secure APIs with Spring Boot, I bring a disciplined approach to every project—treating code like infrastructure and infrastructure like code.
+                </p>
+                
+                <div class="pt-4 flex gap-4 flex-wrap">
+                    <span class="badge badge-cyan">Cloud Native</span>
+                    <span class="badge badge-emerald">MLOps</span>
+                    <span class="badge badge-cyan">Python Expert</span>
+                    <span class="badge badge-emerald">Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Skills Section
+         ============================================ -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Machine Learning & AI -->
+                <div class="skill-category">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-brain text-2xl text-cyan-400"></i>
+                        <h3 class="text-2xl font-bold text-white">ML & AI</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-badge">LangChain</span>
+                        <span class="skill-badge">Hugging Face Transformers</span>
+                        <span class="skill-badge">Gradio</span>
+                        <span class="skill-badge">Embedding Models</span>
+                        <span class="skill-badge">RAG Systems</span>
+                        <span class="skill-badge">Fine-tuning LLMs</span>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure & DevOps -->
+                <div class="skill-category">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-server text-2xl text-emerald-400"></i>
+                        <h3 class="text-2xl font-bold text-white">Infrastructure</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-badge">Terraform</span>
+                        <span class="skill-badge">AWS (S3, EC2, Lambda)</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">Kubernetes</span>
+                        <span class="skill-badge">Linux / WSL</span>
+                        <span class="skill-badge">CI/CD Pipelines</span>
+                    </div>
+                </div>
+                
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-code text-2xl text-cyan-400"></i>
+                        <h3 class="text-2xl font-bold text-white">Languages</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Go</span>
+                        <span class="skill-badge">Java Spring Boot</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Bash / Shell</span>
+                        <span class="skill-badge">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Featured Projects Section
+         ============================================ -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Projects Grid Container (Easy to add new cards) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                <!-- Project Card 1: maintainAI -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-robot text-2xl text-cyan-400"></i>
+                        <h3 class="text-xl font-bold">maintainAI</h3>
+                    </div>
+                    <p class="project-description">
+                        An intelligent maintenance assistant powered by LangChain and Gradio. Generates AI-driven insights for infrastructure monitoring and predictive maintenance using embedding-based RAG.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Gradio</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2: Cloud Infrastructure Automation -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-cloud text-2xl text-emerald-400"></i>
+                        <h3 class="text-xl font-bold">Cloud Infra Automation</h3>
+                    </div>
+                    <p class="project-description">
+                        End-to-end infrastructure automation using Terraform and AWS. Provisioned scalable VPCs, containerized services, and CI/CD pipelines for production ML workloads.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3: Secure File Storage Service -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-lock text-2xl text-cyan-400"></i>
+                        <h3 class="text-xl font-bold">Secure File Storage</h3>
+                    </div>
+                    <p class="project-description">
+                        RESTful API service built in Go for secure file storage and retrieval. Features encryption at rest, role-based access control, and high-concurrency handling with minimal latency.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Helper Text for Adding New Projects -->
+            <div class="mt-12 p-6 bg-slate-800/50 border border-cyan-500/20 rounded-lg">
+                <p class="text-gray-400 text-sm">
+                    <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                    <strong>Tip:</strong> To add new project cards, simply copy a project-card div in the projectsGrid container and update the content. The CSS grid will automatically handle responsive layout.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Contact / Footer Section
+         ============================================ -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-cyan-500/20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="section-title">Let's Work Together</h2>
+            
+            <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
+                I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out!
+            </p>
+            
+            <!-- Contact Methods -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Email -->
+                <a href="mailto:hello@example.com" class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mt-4">Email</h3>
+                    <p class="text-gray-400 mt-2">hello@example.com</p>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-github text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mt-4">GitHub</h3>
+                    <p class="text-gray-400 mt-2">github.com/yourprofile</p>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mt-4">LinkedIn</h3>
+                    <p class="text-gray-400 mt-2">linkedin.com/in/yourprofile</p>
+                </a>
+            </div>
+            
+            <!-- Primary CTA -->
+            <a href="mailto:hello@example.com" class="cta-button cta-primary inline-flex items-center">
+                <i class="fas fa-paper-plane mr-2"></i> Send Me an Email
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="border-t border-cyan-500/20 mt-16 pt-8 text-center text-gray-500 text-sm">
+            <p>© 2026 Alex - AI & MLOps Engineer. Built with vanilla HTML, CSS & JavaScript.</p>
+            <p class="mt-2">
+                <span class="text-cyan-400">→</span> Crafted with precision and passion for scalable intelligence
+            </p>
+        </footer>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
