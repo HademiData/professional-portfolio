@@ -348,6 +348,6 @@ Also, don't add the screenshot yet if you haven't created it. Once you have the 
 
 ## Docker Container Running
 
-The portfolio application running successfully inside a Docker container:
+The portfolio application running successfully inside a Docker container.
 
-![Portfolio running inside Docker](https://github.com/HademiData/professional-portfolio/raw/main/screenshots/docker-container-running.png)
+![Portfolio running inside Docker](./screenshots/docker-container-running.png)
