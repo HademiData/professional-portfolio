@@ -346,9 +346,7 @@ replace `<repository-url>` with your **actual GitHub repository URL**.
 
 Also, don't add the screenshot yet if you haven't created it. Once you have the screenshot, we can add something like:
 
-```markdown
 ![Portfolio running inside Docker](./screenshots/docker-container-running.png)
-```
 
 and put the screenshot in a `screenshots/` folder.
 
