@@ -5,7 +5,7 @@ A modern personal portfolio website built with Next.js and React. The portfolio 
 
 The application was originally developed and deployed using Vercel. As part of my DevOps and Cloud Engineering internship, I prepared the application for containerized deployment using Docker.
 
-FULL DOUCMENTATION HERE
+SEE FULL DOUCMENTATION
 
 <https://app.notion.com/p/THE-NEXUS-BuildLabs-Internship-Devops-3c9f0300be9a8049a2f2e83e2fda9fa5>
 ---
