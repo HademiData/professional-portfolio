@@ -7,6 +7,22 @@ The application was originally developed and deployed using Vercel. As part of m
 
 ---
 
+## App Runing
+
+The portfolio application running successfully inside a Docker container.
+
+<p align="center">
+  <img src="Screenshots/app.png" alt="Portfolio demo" width="900"/>
+</p>
+
+## Docker Container Running
+
+The portfolio application running successfully inside a Docker container port 3000.
+
+<p align="center">
+  <img src="Screenshots/docker-container-running.png" alt="Portfolio demo" width="900"/>
+</p>
+
 ## 🚀 Project Overview
 
 The Professional Portfolio is a web application designed to present my professional profile and technical work in a clean and responsive interface.
@@ -345,9 +361,3 @@ git clone <repository-url>
 replace `<repository-url>` with your **actual GitHub repository URL**.
 
 Also, don't add the screenshot yet if you haven't created it. Once you have the screenshot, we can add something like:
-
-## Docker Container Running
-
-The portfolio application running successfully inside a Docker container.
-
-![Portfolio running inside Docker](./screenshots/docker-container-running.png)
