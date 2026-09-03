@@ -43,4 +43,5 @@ COPY --from=builder /app/next.config.mjs ./next.config.mjs
 EXPOSE 3000
 
 # Start Next.js directly with Node
-CMD ["node_modules/.bin/next", "start", "-H", "0.0.0.0"]
+#CMD ["node_modules/.bin/next", "start", "-H", "0.0.0.0"]
+CMD ["sh", "-c", "node_modules/.bin/next start -H 0.0.0.0 -p ${PORT:-3000}"]
