@@ -1,366 +1,518 @@
 
 # Professional Portfolio
 
-A modern personal portfolio website built with Next.js and React. The portfolio showcases my background, technical skills, projects, and professional experience through a responsive and interactive web interface.
+The application was containerized with Docker and deployed to the cloud as part of my DevOps and Cloud Engineering internship. The project also includes CI/CD automation, application monitoring, health checks, and deployment documentation.
 
-The application was originally developed and deployed using Vercel. As part of my DevOps and Cloud Engineering internship, I prepared the application for containerized deployment using Docker.
+A modern personal portfolio website built with **Next.js, React, and TypeScript**. The portfolio presents my background, technical skills, projects, education, and professional experience through a responsive web interface.
 
-SEE FULL DOUCMENTATION
+This project was originally developed as a personal portfolio application and later used as part of my **DevOps and Cloud Engineering internship**. During the internship, I worked through the process of taking the application from a locally developed project to a **containerized, continuously integrated, cloud-deployed, monitored, and documented application**.
 
-<https://app.notion.com/p/THE-NEXUS-BuildLabs-Internship-Devops-3c9f0300be9a8049a2f2e83e2fda9fa5>
----
+The project gave me practical experience across the different stages of a modern software delivery workflow, including version control, application builds, testing, containerization, CI/CD, cloud deployment, monitoring, automation, troubleshooting, and infrastructure documentation.
 
-## App Runing
+## DevOps Internship Documentation
 
-The portfolio application running successfully inside a Docker container.
+Detailed documentation for the work completed during the internship is available below:
 
-<p align="center">
-  <img src="Screenshots/app.png" alt="Portfolio demo" width="900"/>
-</p>
-
-## Docker Container Running
-
-The portfolio application running successfully inside a Docker container port 3000.
-
-<p align="center">
-  <img src="Screenshots/docker-container-running.png" alt="Portfolio demo" width="900"/>
-</p>
-
-## 🚀 Project Overview
-
-The Professional Portfolio is a web application designed to present my professional profile and technical work in a clean and responsive interface.
-
-The application includes sections for:
-
-- About Me
-- Technical Skills
-- Projects
-- Professional Experience
-- Education
-- Contact Information
-
-The project uses Next.js and React for the frontend and is designed to be easily deployed across different environments.
+- [Task 1](https://app.notion.com/p/THE-NEXUS-BuildLabs-Internship-Devops-3c9f0300be9a8049a2f2e83e2fda9fa5)
+- [Task 2](https://butter-leader-6e4.notion.site/Task-2-3d1f0300be9a80dc93a7c93683a9c485?pvs=73)
+- [Task 3](https://app.notion.com/p/Task-3-3d8f0300be9a809a81c7f7e4e18b8a50?source=copy_link)
 
 ---
 
-## 🛠️ Technologies Used
+## Project Overview
+
+The portfolio is a production-ready web application designed to showcase my professional profile and technical work.
+
+Beyond building the website itself, this repository became a practical environment for learning and applying DevOps practices. I worked on improving how the application is developed, tested, packaged, deployed, monitored, and maintained.
+
+### Key Areas Covered
+
+- Application development with Next.js and React
+- Git and GitHub-based version control
+- Dependency and project management with pnpm
+- Code quality checks with ESLint
+- Production application builds
+- Docker containerization
+- CI/CD automation with GitHub Actions
+- Cloud deployment with Render
+- Application health checks
+- Availability and response-time monitoring
+- Application and deployment logs
+- Resource monitoring
+- Automated deployment after successful CI checks
+- Deployment troubleshooting and incident response
+- Infrastructure and deployment documentation
+
+---
+
+## Technologies Used
+
+### Application
 
 - **Next.js**
 - **React**
 - **TypeScript**
-- **Tailwind CSS**
-- **Lucide React**
+- **CSS**
 - **pnpm**
+
+### DevOps & Cloud
+
+- **Git**
+- **GitHub**
+- **GitHub Actions**
 - **Docker**
+- **Render**
+- **UptimeRobot**
+
+### Development & Quality
+
+- **ESLint**
+- **Node.js**
+- **Linux/Ubuntu**
+- **Docker CLI**
 
 ---
 
-## 📁 Project Structure
+## Development Workflow
+
+The project follows a workflow that connects development, testing, deployment, and monitoring.
+
+```text
+Developer
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+GitHub Actions
+    │
+    ├── Install dependencies
+    ├── Run ESLint
+    ├── Build application
+    └── Build Docker image
+    │
+    ▼
+Render
+    │
+    ├── Build application
+    ├── Deploy container
+    └── Run health checks
+    │
+    ▼
+Production Application
+    │
+    ├── Users
+    ├── UptimeRobot
+    ├── Render Logs
+    └── Render Metrics
+```
+
+This workflow helped me understand how changes move from source code to a running production application.
+
+---
+
+## Docker & Containerization
+
+Docker was used to package the application and its production environment into a consistent container.
+
+The project uses a **multi-stage Docker build** to separate the application build process from the final production image. This helps keep the production image focused on what is required to run the application.
+
+The container is configured to listen on the port provided by the deployment environment, allowing the same image to run locally and on Render.
+
+### Local Docker Build
+
+```bash
+docker build -t professional-portfolio .
+```
+
+### Run the Container
+
+```bash
+docker run -p 3000:3000 professional-portfolio
+```
+
+The application can then be accessed locally through:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Continuous Integration
+
+GitHub Actions was introduced to automatically validate changes pushed to the repository.
+
+The CI workflow performs the following checks:
+
+1. Checks out the repository.
+2. Sets up pnpm.
+3. Sets up Node.js.
+4. Installs dependencies using the lockfile.
+5. Runs ESLint.
+6. Builds the Next.js application.
+7. Builds the Docker image.
+
+This means changes are checked automatically before being considered ready for deployment.
+
+### CI Workflow
+
+```text
+Code Push / Pull Request
+          │
+          ▼
+     GitHub Actions
+          │
+          ├── Install
+          ├── Lint
+          ├── Build
+          └── Docker Build
+          │
+          ▼
+       Validation
+```
+
+---
+
+## Cloud Deployment
+
+The application was deployed to **Render** using the Docker configuration in the repository.
+
+The deployment process connects the GitHub repository to Render so that the application can be built and deployed in the cloud.
+
+Render was also configured to deploy **after successful CI checks**, creating a workflow where code first passes the automated checks before being deployed.
+
+This helped me understand the relationship between:
+
+- Source code
+- CI validation
+- Container builds
+- Cloud deployment
+- Production application monitoring
+
+---
+
+## Application Health Monitoring
+
+A dedicated health endpoint was added to the application:
+
+```text
+/health
+```
+
+The endpoint provides a simple response confirming that the application is running.
+
+Example response:
+
+```json
+{
+  "status": "ok",
+  "service": "professional-portfolio",
+  "timestamp": "..."
+}
+```
+
+This endpoint is used by the infrastructure to verify that the application is available.
+
+Render was configured to use the health endpoint for deployment and service health validation.
+
+---
+
+## Availability & Response Time Monitoring
+
+**UptimeRobot** was configured to monitor the production health endpoint.
+
+The monitoring setup provides visibility into:
+
+- Application availability
+- Response time
+- Downtime
+- Health endpoint status
+
+This provides an additional monitoring layer outside the cloud deployment platform.
+
+---
+
+## Logs & Resource Monitoring
+
+Render's monitoring tools were used to understand the application's behavior after deployment.
+
+### Logs
+
+Render logs provide visibility into:
+
+- Application output
+- Runtime errors
+- Deployment activity
+- Startup issues
+- Failed deployments
+
+These logs can be used to investigate problems when the application does not behave as expected.
+
+### Resource Monitoring
+
+Render metrics were used to observe available infrastructure information such as application resource usage.
+
+This introduced the practice of checking not only whether an application is running, but also how the infrastructure supporting it is performing.
+
+---
+
+## Automation
+
+Several parts of the deployment process were automated to reduce manual work.
+
+### Automated CI Checks
+
+Every relevant repository change can trigger GitHub Actions to validate the application.
+
+### Automated Deployment
+
+Render was configured to deploy after successful CI checks.
+
+### Automated Health Validation
+
+The `/health` endpoint provides a consistent way for the deployment platform to verify application availability.
+
+Together, these practices create a more reliable development and deployment workflow.
+
+---
+
+## Project Structure
 
 ```text
 professional-portfolio/
 │
-├── app/                    # Next.js application pages and routes
-├── components/             # Reusable React components
-├── lib/                    # Utility functions
-├── public/                 # Static assets
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── portfolio-page.tsx
+│   └── health/
+│       └── route.ts
 │
-├── Dockerfile              # Docker image configuration
-├── .dockerignore           # Files excluded from Docker build context
-├── pnpm-workspace.yaml     # pnpm build configuration
-├── package.json            # Project dependencies and scripts
-├── pnpm-lock.yaml          # Dependency lockfile
-├── next.config.mjs         # Next.js configuration
-├── tsconfig.json            # TypeScript configuration
-└── README.md               # Project documentation
-````
+├── components/
+│   └── ui/
+│       └── button.tsx
+│
+├── public/
+│
+├── Screenshots/
+│   ├── app.png
+│   └── docker-container-running.png
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
+├── Dockerfile
+├── eslint.config.mjs
+├── next.config.mjs
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── tsconfig.json
+└── README.md
+```
 
 ---
 
-# 🐳 DevOps & Containerization
+## Running the Project Locally
 
-As part of my DevOps and Cloud Engineering internship, I containerized this application using Docker.
-
-The objective was to prepare the existing web application so that it could run consistently in an isolated environment without requiring the host machine to have the application's dependencies installed.
-
-## Containerization Approach
-
-A multi-stage Docker build was used to create the application image.
-
-The Dockerfile contains three stages:
-
-### 1. Dependencies Stage
-
-The first stage uses Node.js Alpine Linux and installs the project dependencies using pnpm.
-
-```dockerfile
-FROM node:22-alpine AS deps
-```
-
-The project dependency files are copied into the image and dependencies are installed using:
+### 1. Clone the Repository
 
 ```bash
-pnpm install --frozen-lockfile
+git clone https://github.com/HademiData/professional-portfolio.git
+cd professional-portfolio
 ```
 
-### 2. Build Stage
+### 2. Install Dependencies
 
-The second stage copies the installed dependencies and application source code before creating the production build.
+```bash
+pnpm install
+```
+
+### 3. Run the Development Server
+
+```bash
+pnpm dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+### 4. Run Linting
+
+```bash
+pnpm lint
+```
+
+### 5. Build for Production
 
 ```bash
 pnpm build
 ```
 
-This generates the optimized Next.js application inside the `.next` directory.
-
-### 3. Production Stage
-
-The final stage contains the files required to run the production application.
-
-The application is started using:
-
-```dockerfile
-CMD ["node_modules/.bin/next", "start", "-H", "0.0.0.0"]
-```
-
-The application listens on port `3000` inside the container.
-
 ---
 
-# 🔨 Building the Docker Image
+## Docker Workflow
 
-Make sure Docker is installed and running.
-
-Clone the repository and navigate into the project directory:
+To build and test the production container locally:
 
 ```bash
-git clone <repository-url>
-cd professional-portfolio
+docker build -t professional-portfolio .
 ```
 
-Build the Docker image:
+Run it:
 
 ```bash
-docker build -t professional-portfolio:1.0 .
+docker run -p 3000:3000 professional-portfolio
 ```
 
-Verify that the image was created:
-
-```bash
-docker images
-```
-
-You should see:
+Test the health endpoint:
 
 ```text
-professional-portfolio   1.0
+http://localhost:3000/health
 ```
 
 ---
 
-# ▶️ Running the Application with Docker
+## Challenges & Problem Solving
 
-Start a container from the Docker image:
+Working through the project exposed several practical issues that required troubleshooting.
 
-```bash
-docker run -d \
-  --name professional-portfolio \
-  -p 3001:3000 \
-  professional-portfolio:1.0
-```
+Some of the challenges included:
 
-The command maps port `3001` on the host machine to port `3000` inside the Docker container.
+- Preparing an existing Next.js application for production containerization.
+- Managing dependency installation consistently in local and CI environments.
+- Resolving package and build issues during the Docker setup.
+- Configuring the application to work correctly with the cloud platform's dynamic port.
+- Making sure the Docker container could run successfully in production.
+- Configuring automated deployment without bypassing CI checks.
+- Adding application health monitoring.
+- Understanding the difference between build failures, deployment failures, runtime failures, and application availability issues.
+- Using logs and monitoring information to identify and troubleshoot deployment problems.
+
+These challenges helped move the project beyond simply writing application code and into understanding how software behaves throughout its delivery lifecycle.
+
+---
+
+## Incident Response
+
+A basic incident response process was documented for common deployment and application issues.
+
+The general troubleshooting process is:
 
 ```text
-Host Machine
-localhost:3001
+Issue Detected
       │
       ▼
-Docker Container
-port 3000
+Check Application Availability
       │
       ▼
-Next.js Application
+Check Render Deployment Status
+      │
+      ▼
+Review Logs
+      │
+      ▼
+Identify Possible Cause
+      │
+      ▼
+Apply Fix
+      │
+      ▼
+Run CI Checks
+      │
+      ▼
+Redeploy
+      │
+      ▼
+Verify /health
+      │
+      ▼
+Confirm Application Availability
 ```
+
+Common issues considered include:
+
+- Failed CI checks
+- Failed application builds
+- Docker build failures
+- Deployment failures
+- Application startup failures
+- Incorrect port configuration
+- Health-check failures
+- Runtime errors
 
 ---
 
-# 🌐 Accessing the Application
+## Screenshots & Evidence
 
-Once the container is running, open the following URL in a web browser:
+The repository includes screenshots demonstrating parts of the development and deployment process.
 
-```text
-http://localhost:3001
-```
+Examples include:
 
-The portfolio should load from the Docker container.
-
----
-
-# 🔍 Checking the Container
-
-To view running containers:
-
-```bash
-docker ps
-```
-
-To view application logs:
-
-```bash
-docker logs professional-portfolio
-```
-
-To inspect the container:
-
-```bash
-docker inspect professional-portfolio
-```
-
----
-
-# 🛑 Stopping the Container
-
-To stop the running container:
-
-```bash
-docker stop professional-portfolio
-```
-
-To remove the container:
-
-```bash
-docker rm professional-portfolio
-```
-
-To remove the Docker image:
-
-```bash
-docker rmi professional-portfolio:1.0
-```
-
----
-
-# 📸 Docker Containerization Evidence
-
-The application was successfully built into a Docker image and run inside a Docker container.
-
-Evidence includes:
-
-- Docker image successfully built
-- Docker container successfully running
-- Portfolio accessible through the mapped Docker port
-- Docker container status verified using `docker ps`
-- Application logs verified using `docker logs`
-
-A screenshot showing the portfolio running alongside the active Docker container is included as part of the internship deliverables.
-
----
-
-# ⚠️ Challenges Encountered
-
-During the containerization process, several challenges were encountered.
-
-### 1. Dependency Build Scripts
-
-The project uses pnpm 11, which introduced restrictions around dependency build scripts.
-
-Packages such as `sharp` and `msw` initially caused the Docker build to fail because their build scripts were not automatically permitted.
-
-This was resolved by configuring the pnpm workspace to explicitly allow the required build dependencies.
-
-### 2. Docker Port Conflict
-
-The application initially attempted to use port `3000` on the host machine, but the port was already occupied.
-
-The container was therefore mapped to port `3001` on the host while keeping port `3000` inside the container:
-
-```text
-3001:3000
-```
-
-### 3. Container Runtime Configuration
-
-The application needed to listen on all network interfaces inside the container.
-
-The production command was configured to use:
-
-```bash
--H 0.0.0.0
-```
-
-This allowed the application to receive requests through Docker's port mapping.
-
----
-
-# 💡 Benefits of Docker
-
-Containerization improves the deployment process by providing a consistent environment for running the application.
-
-Some benefits include:
-
-- **Consistency:** The application runs with the same dependencies and runtime environment across machines.
-- **Portability:** The application can be moved between development, testing, and production environments.
-- **Isolation:** Application dependencies are isolated from the host operating system.
-- **Simplified deployment:** The application can be packaged as a Docker image and deployed to different environments.
-- **Scalability:** Containers can be replicated and managed using container orchestration platforms such as Kubernetes.
-- **Faster onboarding:** Developers can start the application without manually installing all project dependencies.
-
----
-
-# 🧑‍💻 DevOps Skills Practiced
-
-Through this project, I practiced:
-
-- Git and GitHub
-- Version control
-- Meaningful Git commits
-- Docker
-- Dockerfiles
-- Multi-stage Docker builds
-- Docker images
-- Docker containers
-- Port mapping
-- Container logs
-- Environment configuration
-- Application containerization
-- Technical documentation
-
----
-
-# 🔮 Future DevOps Improvements
-
-The containerized application can be extended with additional DevOps practices, including:
-
-- GitHub Actions CI/CD
-- Automated Docker image builds
-- Docker image publishing to Docker Hub or GitHub Container Registry
+- Application interface
+- Docker container running locally
+- CI/CD workflow results
 - Cloud deployment
-- Infrastructure as Code
-- Application monitoring
-- Container health checks
-- Automated testing
-- Security scanning
-- Kubernetes deployment
+- Monitoring and health checks
 
-These improvements can be introduced in subsequent stages of the DevOps and Cloud Engineering internship.
+Detailed evidence and explanations for the internship tasks are available in the linked documentation above.
 
 ---
 
-# 📄 License
+## What I Learned
 
-This project is intended for educational and portfolio purposes.
+This project gave me practical experience with the complete path from **application development to production deployment**.
 
-````
+I learned how different DevOps practices work together rather than treating them as separate tools:
 
-### One thing I would change before you paste it
+- Git provides version control.
+- GitHub provides collaboration and source management.
+- GitHub Actions provides automated validation.
+- Docker provides a consistent application environment.
+- Render provides cloud deployment.
+- Health checks help verify application availability.
+- Monitoring provides visibility after deployment.
+- Logs help with troubleshooting.
+- Automation reduces repetitive manual deployment work.
+- Documentation makes the infrastructure and troubleshooting process easier to understand and reproduce.
 
-In this section:
+The project also helped me understand that deploying an application is not the end of development. A production application also needs to be **observable, maintainable, and reliable**.
 
-```markdown
-git clone <repository-url>
-````
+---
 
-replace `<repository-url>` with your **actual GitHub repository URL**.
+## Future Improvements
 
-Also, don't add the screenshot yet if you haven't created it. Once you have the screenshot, we can add something like:
+With more time, I would further improve the project by adding:
+
+- More detailed application monitoring
+- Performance monitoring and alerting
+- Automated backup strategies where applicable
+- More comprehensive automated tests
+- Infrastructure as Code
+- More advanced deployment strategies
+- Improved security scanning
+- More detailed application and infrastructure dashboards
+
+---
+
+## DevOps Internship Summary
+
+This repository represents the practical work completed while developing my understanding of DevOps and Cloud Engineering.
+
+The project progressed from a normal web application into a workflow covering:
+
+**Development → Version Control → CI → Testing → Containerization → Cloud Deployment → Automation → Monitoring → Troubleshooting → Documentation**
+
+The goal was not only to deploy the portfolio, but to understand and demonstrate the practices required to **build, deliver, monitor, and maintain a modern application**.
+
+---
+
+## License
+
+This project is for personal portfolio and educational purposes.
