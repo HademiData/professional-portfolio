@@ -13,7 +13,7 @@ The project gave me practical experience across the different stages of a modern
 
 Detailed documentation for the work completed during the internship is available below:
 
-- [Task 1](https://app.notion.com/p/THE-NEXUS-BuildLabs-Internship-Devops-3c9f0300be9a8049a2f2e83e2fda9fa5)
+- [Task 1](https://butter-leader-6e4.notion.site/Task-1-3c9f0300be9a8049a2f2e83e2fda9fa5?pvs=74)
 - [Task 2](https://butter-leader-6e4.notion.site/Task-2-3d1f0300be9a80dc93a7c93683a9c485?pvs=73)
 - [Task 3](https://app.notion.com/p/Task-3-3d8f0300be9a809a81c7f7e4e18b8a50?source=copy_link)
 
