@@ -1153,6 +1153,7 @@ export default function PortfolioPage() {
                 <div class="photo-box">
                     <div class="photo-circle">
                     <img
+                    
                         src="/about-image.png"
                         alt="Adewale Afolabi Adeniyi"
                     >
