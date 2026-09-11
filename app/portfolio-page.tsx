@@ -1106,7 +1106,7 @@ export default function PortfolioPage() {
 
         <!-- Navigation -->
         <nav>
-            <div class="logo">AA</div>
+            <div class="logo">HademiData</div>
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -1152,10 +1152,11 @@ export default function PortfolioPage() {
 
                 <div class="photo-box">
                     <div class="photo-circle">
-                        <img
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202026-07-31%2012-27-48-pNJF5qSmfd0hMK7Qm6hnjLqnfizZOq.png"
-                            alt="Adewale Afolabi Adeniyi - Professional"
-                        >
+                    <img
+                        src="/about-image.png"
+                        alt="Adewale Afolabi Adeniyi"
+                    >
+                        
                     </div>
                 </div>
 
@@ -1413,11 +1414,7 @@ I am particularly interested in AI/ML for engineering systems, trustworthy AI, s
 
                     <!-- MaintainAI -->
                     <div class="project-card">
-                    <img
-                        src="https://raw.githubusercontent.com/HademiData/maintain-ai/main/image.png"
-                        alt="MaintainAI"
-                        class="project-image"
-                    >
+                    
 
                         <h3>MaintainAI</h3>
 
