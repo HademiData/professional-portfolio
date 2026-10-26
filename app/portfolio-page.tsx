@@ -210,12 +210,12 @@ export default function PortfolioPage() {
                     <div className="hero-content">
                         <div className="hero-text">
                             <h1>
-                                AI Engineer Building Practical
+                                Software Engineer Building Practical
                                 Intelligent Systems
                             </h1>
 
                             <p>
-                                AI-focused software engineer developing
+                                Building
                                 intelligent software systems across machine
                                 learning, Generative AI, RAG, backend
                                 engineering, and cloud technologies. I apply
