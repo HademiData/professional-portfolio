@@ -531,30 +531,42 @@ export default function PortfolioPage() {
                         </h2>
 
                         <div className="project-grid">
+
+
+                                                        
                             <ProjectCard
-                                title="MaintainAI"
-                                description="A RAG-powered maintenance assistant designed to help maintenance teams retrieve information from historical work orders and inventory data. The system combines semantic retrieval with structured inventory lookup to reduce unsupported AI responses."
+                                title="Ràtech | Full-Stack Microservices Ecommerce Platform"
+                                description="Designed and developed a full-stack e-commerce platform for technology products, built around independently deployable microservices. Implemented authentication, product management, and order processing with dedicated databases and inter-service communication. Configured cloud deployments, environment management, and service routing using an API gateway, demonstrating practical experience in backend engineering, distributed systems, and DevOps."
                                 links={[
                                     {
-                                        href: 'https://github.com/HademiData/maintain-ai',
+                                        href: 'https://github.com/HademiData/ecommerce',
                                         icon: 'fab fa-github',
                                         label: 'GitHub',
                                     },
                                     {
-                                        href: 'https://maintain-ai-60aj.onrender.com/',
+                                        href: 'https://ecommerce-taupe-ten-55.vercel.app/',
                                         icon: 'fas fa-external-link-alt',
-                                        label: 'Demo',
+                                        label: 'Live',
                                     },
                                 ]}
                                 tags={[
-                                    'Python',
-                                    'RAG',
-                                    'Qwen',
-                                    'ChromaDB',
-                                    'Hugging Face',
+                                    'TypeScript',
+                                    'React',
+                                    'NestJS',
+                                    'Microservices',
+                                    'PostgreSQL',
+                                    'MongoDB',
+                                    'MySQL',
+                                    'Docker',
+                                    'RabbitMQ',
+                                    'Redis',
+                                    'Prisma',
+                                    'Vercel',
+                                    'Cloud Deployment',
                                 ]}
                             />
 
+                
                             <ProjectCard
                                 title="CreditLens"
                                 description="An AI-powered credit risk assessment platform that predicts loan default probability using a machine learning model trained on the Home Credit dataset. It features an interactive dashboard for exploring credit risk insights, assessing applicants, and understanding predictions."
@@ -582,8 +594,33 @@ export default function PortfolioPage() {
                                 ]}
                             />
 
+                             <ProjectCard
+                                title="MaintainAI"
+                                description="A RAG-powered maintenance assistant designed to help maintenance teams retrieve information from historical work orders and inventory data. The system combines semantic retrieval with structured inventory lookup to reduce unsupported AI responses."
+                                links={[
+                                    {
+                                        href: 'https://github.com/HademiData/maintain-ai',
+                                        icon: 'fab fa-github',
+                                        label: 'GitHub',
+                                    },
+                                    {
+                                        href: 'https://maintain-ai-60aj.onrender.com/',
+                                        icon: 'fas fa-external-link-alt',
+                                        label: 'Demo',
+                                    },
+                                ]}
+                                tags={[
+                                    'Python',
+                                    'RAG',
+                                    'Qwen',
+                                    'ChromaDB',
+                                    'Hugging Face',
+                                ]}
+                            />
+
+
                             <ProjectCard
-                                title="WattSmart Naija"
+                                title="WattSmart Naija (AI-Powered Energy Management Platform)"
                                 description="An AI-powered energy management platform for Nigerian households and SMEs. It combines deterministic energy calculations with Gemini to generate personalized energy audits, cost analysis, and solar investment recommendations."
                                 links={[
                                     {
@@ -607,7 +644,7 @@ export default function PortfolioPage() {
                             />
 
                             <ProjectCard
-                                title="Cloud & DevOps Portfolio"
+                                title="Cloud & DevOps Personal Portfolio"
                                 description="A production-oriented portfolio application demonstrating containerization, CI/CD, cloud deployment, health checks, automated builds, monitoring, and deployment workflows."
                                 links={[
                                     {
